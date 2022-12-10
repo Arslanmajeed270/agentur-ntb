@@ -85,6 +85,8 @@
     "testEnvironment": "node"
   },
   "moduleNameMapper": {
+    "@config/(.*)": "<rootDir>/src/config/$1",
+    "@config": "<rootDir>/src/config",
     "@lib/utils/(.*)": "<rootDir>/libs/utils/src/$1",
     "@lib/utils": "<rootDir>/libs/utils/src",
     "@lib/types/(.*)": "<rootDir>/libs/types/src/$1",

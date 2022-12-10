@@ -1,16 +1,27 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+
+// config imports
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigEnum, typeormConfig, serverConfig } from '@config';
+
+// Module imports
 import { AuthModule } from './auth/auth.module';
-import { ConfigModule } from '@nestjs/config';
-import { ormConfig } from '@lib/config';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [ormConfig],
+      load: [typeormConfig, serverConfig],
     }),
-    TypeOrmModule.forRoot(ormConfig),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) =>
+        await configService.get<Promise<TypeOrmModuleOptions>>(
+          ConfigEnum.TYPEORM,
+        ),
+      inject: [ConfigService],
+    }),
     AuthModule,
   ],
   controllers: [],
