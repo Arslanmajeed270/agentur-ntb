@@ -19,29 +19,12 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      
       "@config": [
         "src/config"
       ],
       "@config/*": [
         "src/config/*"
-      ],
-      "@lib/utils": [
-        "libs/utils/src"
-      ],
-      "@lib/utils/*": [
-        "libs/utils/src/*"
-      ],
-      "@lib/types": [
-        "libs/types/src"
-      ],
-      "@lib/types/*": [
-        "libs/types/src/*"
-      ],
-      "@lib/dtos": [
-        "libs/dtos/src"
-      ],
-      "@lib/dtos/*": [
-        "libs/dtos/src/*"
       ],
       "@lib/constants": [
         "libs/constants/src"
@@ -49,12 +32,24 @@
       "@lib/constants/*": [
         "libs/constants/src/*"
       ],
-      "@lib/config": [
-        "libs/config/src"
+      "@lib/dtos": [
+        "libs/dtos/src"
       ],
-      "@lib/config/*": [
-        "libs/config/src/*"
+      "@lib/dtos/*": [
+        "libs/dtos/src/*"
       ],
+      "@lib/types": [
+        "libs/types/src"
+      ],
+      "@lib/types/*": [
+        "libs/types/src/*"
+      ],
+      "@lib/utils": [
+        "libs/utils/src"
+      ],
+      "@lib/utils/*": [
+        "libs/utils/src/*"
+      ]
     }
   }
 }

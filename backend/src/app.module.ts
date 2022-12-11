@@ -3,16 +3,21 @@ import { Module } from '@nestjs/common';
 // config imports
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { ConfigEnum, typeormConfig, serverConfig } from '@config';
+
+// config imports files
+import typeormConfig from './config/orm.config';
+import serverConfig from './config/server.config';
+import swaggerConfig from './config/swagger.config';
 
 // Module imports
 import { AuthModule } from './auth/auth.module';
+import { ConfigEnum } from '@lib/types';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [typeormConfig, serverConfig],
+      load: [typeormConfig, serverConfig, swaggerConfig],
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],

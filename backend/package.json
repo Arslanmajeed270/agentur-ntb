@@ -1,6 +1,6 @@
 {
   "name": "agentur-ntb-backend",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "",
   "author": "Arslan Majeed",
   "private": true,
@@ -94,8 +94,6 @@
     "@lib/dtos/(.*)": "<rootDir>/libs/dtos/src/$1",
     "@lib/dtos": "<rootDir>/libs/dtos/src",
     "@lib/constants/(.*)": "<rootDir>/libs/constants/src/$1",
-    "@lib/constants": "<rootDir>/libs/constants/src",
-    "@lib/config/(.*)": "<rootDir>/libs/config/src/$1",
-    "@lib/config": "<rootDir>/libs/config/src"
+    "@lib/constants": "<rootDir>/libs/constants/src"
   }
 }

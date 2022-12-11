@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { registerAs } from '@nestjs/config';
 import { DataSourceOptions } from 'typeorm';
-import { ConfigEnum } from '.';
+import { ConfigEnum } from '@lib/types';
 
 // default directories
 const ENTITIES_DIR = resolve(
@@ -16,7 +16,7 @@ const ENTITIES_DIR = resolve(
 
 // const SEED_DIR = NODE_ENV === 'development' ? SEED_DEV_DIR : SEED_PROD_DIR;
 
-export const typeormConfig = registerAs(
+export default registerAs(
   ConfigEnum.TYPEORM,
   (): DataSourceOptions => ({
     type: 'mysql',
